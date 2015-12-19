@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+require 'bundler/setup'
+require 'optparse'
+require 'arcopy'
+
+# Catch trap interrupts
+Signal.trap('INT') { exit 1 }
+
+# Run CLI
+Arcopy::Cli.run!
